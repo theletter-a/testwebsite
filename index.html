@@ -12,16 +12,37 @@
             height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-color: #000;
+            color: white;
         }
-        h1 {
-            font-weight: bold;
+        #hiKayla {
             font-size: 3rem;
-            color: #333;
+            font-weight: bold;
+            transition: opacity 2s;
+            cursor: pointer;
+        }
+        #newMessage {
+            display: none;
+            font-size: 3rem;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <h1>Hi Kayla</h1>
+    <div id="hiKayla" onclick="fadeOutText()">Hi Kayla</div>
+    <div id="newMessage">Who was in Paris?</div>
+
+    <script>
+        function fadeOutText() {
+            const hiKayla = document.getElementById('hiKayla');
+            const newMessage = document.getElementById('newMessage');
+
+            hiKayla.style.opacity = '0';
+            setTimeout(() => {
+                hiKayla.style.display = 'none';
+                newMessage.style.display = 'block';
+            }, 2000);
+        }
+    </script>
 </body>
 </html>
